@@ -15,7 +15,7 @@ import sys
 TEXT_COLOR = (0, 255, 0)
 TRACKER_COLOR = (255, 0, 0)
 FONT = cv2.FONT_HERSHEY_SIMPLEX
-VIDEO_SOURCE = cv2.VideoCapture(0) 
+VIDEO_SOURCE = 0 #choose video source, 0 ,means i use webcam.  
 
 BGS_TYPES = ["GMG", "MOG", "MOG2", "KNN", "CNT"]
 BGS_TYPE = BGS_TYPES[2]
@@ -58,7 +58,7 @@ def getBGSubtractor(BGS_TYPE):
     sys.exit(1)
 
 cap = cv2.VideoCapture(VIDEO_SOURCE)
-bg_subtractor = getBGSubtractor(BGS_TYPE)
+bg_subtractor = getBGSubtractor(BGS_TYPE) #choose background substract type.
 minArea = 250
 
 def main():
